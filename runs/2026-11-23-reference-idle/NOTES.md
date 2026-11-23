@@ -35,8 +35,9 @@ must carry out, and why R3 asks for an action too. The whole check took 6 s.
 ## After the run
 
 `report.md` was written again from `result.json` with `python3 -m kit report`, after the report of the kit
-got 1 more line: the agent's name and its version now stand on 2 lines. `result.json`, `trials/`, `sent/`
-and `agent-output/` are as the run wrote them. Commit `91b1509` holds the folder as the kit wrote it, and
+got 1 more line: the agent's name and its version now stand on 2 lines. `result.json` and `trials/` are
+as the run wrote them. There are no folders `sent/` and `agent-output/`: the script sent nothing and
+printed nothing, and git keeps no empty folder. Commit `91b1509` holds the folder as the kit wrote it, and
 `git diff 91b1509 -- runs/` shows everything that changed since.
 
 ## Check it yourself

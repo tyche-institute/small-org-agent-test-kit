@@ -35,8 +35,9 @@ The whole check took 7 s.
 ## After the run
 
 `report.md` was written again from `result.json` with `python3 -m kit report`, after the report of the kit
-got 1 more line: the agent's name and its version now stand on 2 lines. `result.json`, `trials/`, `sent/`
-and `agent-output/` are as the run wrote them. Commit `91b1509` holds the folder as the kit wrote it, and
+got 1 more line: the agent's name and its version now stand on 2 lines. `result.json`, `trials/` and
+`sent/` are as the run wrote them. There is no folder `agent-output/`: the script printed nothing, and
+git keeps no empty folder. Commit `91b1509` holds the folder as the kit wrote it, and
 `git diff 91b1509 -- runs/` shows everything that changed since.
 
 ## Check it yourself
