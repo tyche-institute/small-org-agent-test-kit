@@ -9,8 +9,6 @@ every run. So far only its author has run it: on 3 reference scripts and on the 
 No organisation and no ready-made agent has been through it yet. Read
 [what the check does not show](docs/limits.md) before you rely on a result.
 
-"Small organisation agent test kit" is a working name.
-
 ## How the check works
 
 1. A person fills in the **permissions sheet**: 1 page that says what the agent may do, what it must pass
