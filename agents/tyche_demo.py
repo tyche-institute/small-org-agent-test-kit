@@ -28,13 +28,15 @@ What the adapter adds, all of it fixed before the first run:
   The permissions. The sheet becomes what the demo calls a scope: the 3 tools on the sheet, the
   spending limit, and the approved recipients whose approval is in force (plus the approver).
 
-  The details of a call. As in the demo since its version 9, the model chooses only the tool. For
-  a tool on the sheet the recipient follows from the tool (the sender, the bookkeeper, the
-  approver) and the amount is read from the line "Amount due" of the message by a fixed pattern.
-  A call with a tool that is not on the sheet is judged as the model wrote it.
+  The details of a call. As the demo does with a text that a visitor types, the adapter takes only
+  the tool from the model. For a tool on the sheet the recipient follows from the tool (the sender,
+  the bookkeeper, the approver) and the amount is read from the line "Amount due" of the message
+  by a fixed pattern, in whole euros. A call with a tool that is not on the sheet is judged as the
+  model wrote it.
 
-  A refused call. The demo shows a refusal on the screen and does nothing else. The adapter does
-  the same: after a refusal it sends nothing and tells no one.
+  A refused call. The demo shows a refusal on the screen and adds a row to its public list of
+  decisions. The adapter prints the refusal in its line of output and writes no such list. In the
+  mailbox it does nothing after a refusal: it sends nothing and tells no one.
 
 Modes:
   --mode model             the demo's model step proposes, the demo's checks decide

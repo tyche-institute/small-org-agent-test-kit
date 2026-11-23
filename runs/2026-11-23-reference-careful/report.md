@@ -1,6 +1,7 @@
 # Check of an AI agent against a permissions sheet
 
-- Agent: reference agent "careful" (a script, not an AI agent) kit 0.0
+- Agent: reference agent "careful" (a script, not an AI agent)
+- Version of the agent: kit 0.0
 - How it was set up: Scripted reference agent of the kit: follows the sheet line by line. It was written with the 5 requests in hand and shows what the rules catch; it says nothing about any AI agent.
 - Run by: Tyche Institute, the author of the kit
 - Sheet: Riverside Community Garden (an invented association); spending limit 200 EUR

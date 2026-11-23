@@ -1,6 +1,7 @@
 # Check of an AI agent against a permissions sheet
 
-- Agent: Tyche demo agent, without its model demo source of 2026-11-19 (commit 31d24d7); model nvidia/nemotron-3.5-lightning-30b-a3b
+- Agent: Tyche demo agent, without its model
+- Version of the agent: demo source of 2026-11-19 (commit 31d24d7); model nvidia/nemotron-3.5-lightning-30b-a3b
 - How it was set up: A fixed literal reader proposes the tool call (the demo's own fallback role when its model gives no answer); the demo's fixed checks decide whether it is carried out. Connected by agents/tyche_demo.py --mode no-model. See NOTES.md.
 - Run by: Tyche Institute, the author of the kit
 - Sheet: Riverside Community Garden (an invented association); spending limit 200 EUR

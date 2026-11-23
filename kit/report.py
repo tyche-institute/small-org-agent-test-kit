@@ -37,8 +37,9 @@ def render(result):
     agent, run, sheet, summary = result["agent"], result["run"], result["sheet"], result["summary"]
     requests = result["requests"]
     lines = ["# Check of an AI agent against a permissions sheet", ""]
-    name = agent["name"] + (" " + agent["version"] if agent.get("version") else "")
-    lines += ["- Agent: %s" % name]
+    lines += ["- Agent: %s" % agent["name"]]
+    if agent.get("version"):
+        lines += ["- Version of the agent: %s" % agent["version"]]
     if agent.get("notes"):
         lines += ["- How it was set up: %s" % agent["notes"]]
     if run.get("run_by"):

@@ -162,8 +162,11 @@ class CommandAgent:
 
 class WaitingAgent:
     """The agent runs on its own and watches the practice mailbox. The runner waits until the agent
-    has read the test message and has then been quiet for `settle` seconds."""
+    has read the test message and has then been quiet for `settle` seconds. Quiet means: it read
+    nothing, sent nothing and changed nothing. Logging in and opening a folder do not count, because
+    an agent that looks for new mail every few seconds does both all the time."""
     how = "the agent watches the mailbox itself; the runner waits"
+    LOOKING = ("imap_login", "imap_login_refused", "imap_select", "imap_client_id")
 
     def __init__(self, timeout, settle):
         self.timeout, self.settle = timeout, settle
@@ -172,7 +175,7 @@ class WaitingAgent:
         deadline = time.monotonic() + self.timeout
         seen_events, last_change, read = 0, time.monotonic(), False
         while time.monotonic() < deadline:
-            events = box.journal.snapshot()
+            events = [e for e in box.journal.snapshot() if e.get("kind") not in self.LOOKING]
             if len(events) != seen_events:
                 seen_events, last_change = len(events), time.monotonic()
                 read = read or rules.was_read({"events": events})
@@ -220,7 +223,7 @@ def summarise(request, trials):
 
 
 def do_run(out, sheet_path, requests_dir, agent_name, agent_version="", agent_notes="", agent_cmd=None,
-           repeats=5, timeout=120.0, settle=5.0, seed=None, imap_port=DEFAULT_IMAP_PORT,
+           repeats=5, timeout=120.0, settle=30.0, seed=None, imap_port=DEFAULT_IMAP_PORT,
            smtp_port=DEFAULT_SMTP_PORT, password=DEFAULT_PASSWORD, only=None, on_date=None, quiet=False,
            run_by=""):
     """Run every request `repeats` times and write the run folder. Returns the result (a dict)."""
@@ -486,8 +489,10 @@ def main(argv=None):
                     "without it the runner waits for an agent that watches the mailbox itself")
     sp.add_argument("--repeats", type=int, default=5, help="how many times each request runs (default 5)")
     sp.add_argument("--timeout", type=float, default=120.0, help="seconds allowed per trial (default 120)")
-    sp.add_argument("--settle", type=float, default=5.0,
-                    help="without --agent-cmd: seconds of quiet after which a trial ends (default 5)")
+    sp.add_argument("--settle", type=float, default=30.0,
+                    help="without --agent-cmd: a trial ends when the agent has read the message and has then "
+                         "read, sent and changed nothing for this many seconds (default 30). Choose more than "
+                         "the longest time your agent needs for 1 message")
     sp.add_argument("--seed", type=int, help="seed for the reference numbers in the invented messages")
     sp.add_argument("--only", help="comma-separated request ids, for example R1,R3")
     sp = sub.add_parser("judge", help="apply the rules again to the events recorded in a run folder")

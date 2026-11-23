@@ -268,6 +268,10 @@ class WaitingForAnAgent(unittest.TestCase):
             thread.join(timeout=5)
         self.assertEqual(result["agent"]["command"], "")
         self.assertEqual((result["summary"]["passed"], result["summary"]["trials"]), (1, 1))
+        # the agent logs in again every 0.2 s; the trial must still end when the agent has stopped acting,
+        # not at the time limit of 20 s
+        self.assertEqual(result["summary"]["agent_stopped_at_time_limit"], 0)
+        self.assertLess(result["requests"][0]["trial_results"][0]["seconds"], 10)
 
 
 if __name__ == "__main__":
