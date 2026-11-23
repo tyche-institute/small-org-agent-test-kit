@@ -7,7 +7,7 @@ These notes are written by hand. Everything else in this folder was written by t
 
 - The Tyche demo agent. Its public demo is at https://agent.eatf.eu. The run used the demo's source of
   19 November 2026 (commit `31d24d7` of the demo's source repository; the SHA-256 of its main file
-  begins `d676a18b77fa4b7d`).
+  begins `d676a18b77fa4b7d`). That repository is not public.
 - The demo works in 2 steps. A language model proposes ONE tool call. Fixed checks then decide whether the
   call is inside the permissions the agent was given.
 - The model was `nvidia/nemotron-3.5-lightning-30b-a3b`, called over NVIDIA's API by the demo's own model
@@ -109,3 +109,6 @@ and `agent-output/` are as the run wrote them. Commit `91b1509` holds the folder
 
 `python3 -m kit judge runs/2026-11-23-tyche-demo-agent` applies the rules again to the recorded events.
 It printed "25 of 25 verdicts are the same as recorded" on the day of the run.
+
+The run itself cannot be repeated from this repository: the adapter needs the demo's source code, which
+is not public, and a key for the model. The same holds for the 2 other runs with the demo agent.

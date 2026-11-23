@@ -90,6 +90,9 @@ the agent has read the test message and has then read, sent and changed nothing 
   `result-form.md`.
 - The names of the agent, its version and its set-up are written by the person who ran the check. The kit
   cannot verify them.
+- The 3 dated runs with the Tyche demo agent cannot be repeated by a reader: the demo's source code is
+  not public. Their records can be judged again, and the 3 runs with the reference scripts can be
+  repeated.
 
 ## Where the kit was tried
 
