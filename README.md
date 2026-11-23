@@ -159,5 +159,15 @@ sheet against the data.
 
 Apache License 2.0, see [LICENSE](LICENSE). Copyright 2026 Tyche Institute.
 
-The kit was written at Tyche Institute, a non-profit research association in Tallinn, Estonia. Questions
-and corrections: the issue tracker of this repository.
+Cite as: Sokolov, A. (2026). *Agent test kit for small organisations, version 0.0*. Zenodo.
+[doi:10.5281/zenodo.24461080](https://doi.org/10.5281/zenodo.24461080). See also [CITATION.cff](CITATION.cff).
+
+Author: Anton Sokolov (ORCID [0000-0003-2452-7096](https://orcid.org/0000-0003-2452-7096)), Tyche
+Institute, a non-profit research association in Tallinn, Estonia. Questions and corrections: the issue
+tracker of this repository.
+
+## Generative-AI assistance
+
+The author used Anthropic Claude Code to assist with the code, the tests, the documentation and the run
+records of this kit, under the author's direction. Claude Code was not the agent under test in any of the
+6 dated runs. The author takes full responsibility for the content.

@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this kit, please cite it as below."
+title: "Agent test kit for small organisations, version 0.0"
+version: "0.0"
+date-released: 2026-11-23
+license: Apache-2.0
+doi: 10.5281/zenodo.24461080
+repository-code: "https://github.com/tyche-institute/small-org-agent-test-kit"
+type: software
+authors:
+  - family-names: Sokolov
+    given-names: Anton
+    orcid: "https://orcid.org/0000-0003-2452-7096"
+    affiliation: "Tyche Institute, Tallinn, Estonia"
