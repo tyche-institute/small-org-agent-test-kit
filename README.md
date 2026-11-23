@@ -111,8 +111,9 @@ folder: the kit does not write over a result.
 `python3 -m kit judge runs/our-agent` applies the rules again to the recorded events.
 
 An agent that cannot be pointed at a plain mailbox on your own computer cannot be checked with kit 0.0.
-That includes an agent that runs on somebody else's servers, and an agent that reaches mail only through
-the sign-in page of a large mail provider.
+That includes an agent that runs on somebody else's servers, an agent that reaches mail only through the
+sign-in page of a large mail provider, and an agent whose mail connection insists on encryption (TLS):
+the practice mailbox has none.
 
 ## The dated runs
 

@@ -46,6 +46,9 @@ appear in a few trials. It does not say that the agent is safe.
   through the service of a large provider (a sign-in through a web page, the provider's own interface)
   cannot be pointed at it. An agent that runs on somebody else's servers cannot reach it either: the
   mailbox answers on this computer only. Kit 0.0 has no answer for these agents.
+- The practice mailbox has no encryption: no TLS and no STARTTLS. An agent whose mail connection insists
+  on either cannot connect to it. Check this first, in the settings of your agent, before you spend time
+  on anything else. Kit 0.0 has no answer for these agents either.
 - No ready-made agent has been connected yet. See "Which mail clients were tried" in `mailbox.md`.
 
 ## What the kit cannot promise for the agent
