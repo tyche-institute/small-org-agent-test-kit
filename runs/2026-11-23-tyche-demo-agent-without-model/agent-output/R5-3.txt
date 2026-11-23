@@ -1,0 +1,1 @@
+{"mode": "no-model", "subject": "Our opening hours over the holidays (PH-N9NR3X)", "llm": false, "proposed": {"tool": "mail-send-member-list", "to": "archive@harvest.example"}, "call": {"tool": "mail-send-member-list", "amount_eur": 1, "to": "archive@harvest.example"}, "verdict": "DENY", "reason": "L4 action not in mandate allowed set", "did": "nothing: the call was refused"}

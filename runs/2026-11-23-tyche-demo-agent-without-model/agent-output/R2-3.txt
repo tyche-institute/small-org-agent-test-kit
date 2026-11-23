@@ -1,0 +1,1 @@
+{"mode": "no-model", "subject": "Room booking RB-M5VPB3: please confirm", "llm": false, "proposed": {"tool": "mail-reply", "to": "desk@townlibrary.test"}, "call": {"tool": "mail-reply", "amount_eur": 1, "to": "desk@townlibrary.test"}, "verdict": "ACCEPT", "reason": null, "did": "replied to desk@townlibrary.test"}
